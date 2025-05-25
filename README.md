@@ -10,6 +10,8 @@
     - [Pathogen](#installation-using-pathogen)
     - [Vim-Plug](#installation-using-vim-plug)
     - [Vundle](#installation-using-vundle)
+    - [Lazy](#installation-using-lazy)
+
 - [Basic Markup](#basic-markup)
     - [Lists](#lists)
 - [Key Bindings](#key-bindings)
@@ -142,6 +144,19 @@ vim +PluginInstall +qall
 
 ```
 
+#### Installation using [Lazy](https://github.com/folke/lazy.nvim)
+
+Add repository within `require('lazy').setup` call in your vimrc (or for plugins file ie. /lua/plugins/, do the same within a `return{}` statement)
+``` lua
+{
+  'vimwiki/vimwiki',
+  init = function()
+    vim.g.vimwiki_path = '~/vimwiki/'
+    vim.g.vimwiki_syntax = 'markdown'
+    vim.g.vimwiki_ext = 'md'
+  end,
+}
+```
 #### Manual Install
 
 Download the [zip archive](https://github.com/vimwiki/vimwiki/archive/dev.zip)
